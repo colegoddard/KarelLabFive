@@ -12,8 +12,58 @@ public class DemocracyBot extends Robot
     }
     
     public void fixBallots() {
-        
+        for (int i = 0; i < 8 ; i++) {
+            move();
+            
+            if (nextToABeeper()) {
+                turnLeft();
+                move();
+                if (!nextToABeeper()) {
+                    putBeeper();
+                }
+                turnLeft();
+                turnLeft();
+                move();
+                move();
+                if (!nextToABeeper()) {
+                    putBeeper();
+                }
+                turnLeft();
+                turnLeft();
+                move();
+                turnRight();
+                move();
+            }
+            
+            if (!nextToABeeper()) {
+                turnLeft();
+                move();
+                if (nextToABeeper()) {
+                    pickBeeper();
+                }
+                turnLeft();
+                turnLeft();
+                move();
+                move();
+                if (nextToABeeper()) {
+                    pickBeeper();
+                }
+                if (nextToABeeper()) {
+                    pickBeeper();
+                }
+                turnLeft();
+                turnLeft();
+                move();
+                turnRight();
+                
+            }
+        }
     }
-   
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
 }
 
